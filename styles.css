@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+h1 {
+  font-family: 'Galmuri11', cursive;
+  color: white;
+}
+
+.App {
+  display: flex;
+}
+
+
+.gameInfo {
+  width: 100%;
+}
+
+.gameInfoMain {
+  display: flex;
+}
+
+.gameInfo img {
+  width: 20%;
+  height: 20%;
+}
+
+.endScreenDefeat {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.endScreenVictory {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.endScreen > h1 {
+  color: white;
+  font-size: 50px;
+}
+
+.upgradeSelect > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  cursor: pointer;
+
+  transition: color 0.2s;
+}
+
+.upgradeSelect > h1:hover {
+  color: red;
+}
+
+.upgradeSelect > h1:active {
+  color: green;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 1440px) {
+  h1 {
+    font-size: 25px;
+  }
+}
