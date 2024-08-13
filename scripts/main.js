@@ -5,7 +5,6 @@ ctx.canvas.width  = window.innerWidth / 2;
 ctx.canvas.height = window.innerHeight - 5;
 
 const backgroundImage = generateImage("../images/bg.jpg")
-//player images
 
 const missileImage = generateImage("../images/player/missle.png")
 
@@ -92,7 +91,7 @@ const moveUp = () => playerPos.y -= newPlayer.ms
 const moveDown = () => playerPos.y += newPlayer.ms
 
 document.addEventListener("keydown", (event)=>{
-	// music.play()
+	music.play()
 	if (event.key === 'a' && !keys.includes(event.key)) {
 		keys.push(event.key)
 		isPlayerLeft = true
@@ -148,7 +147,6 @@ function resetGenerated() {
 let isPlaying = true
 
 function gameLoop() {
-	//refresh frame
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 
 
