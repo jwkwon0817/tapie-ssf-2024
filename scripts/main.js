@@ -27,10 +27,6 @@ setInterval(()=>{
 
 	if (newPlayer.tenAllNumber > 0) {
 		tenAllDelay = true
-		let zap = new Audio;
-		zap.src = '../sounds/zap.mp3'
-		zap.volume = 0.1
-		zap.play()
 	}
 
 }, 5000)
@@ -38,13 +34,7 @@ setInterval(()=>{
 let tenAllDelay = false
 let tenAllCounter = 0
 
-
-
 const newPlayer = new Player()
-
-const music = new Audio;
-music.src = '../sounds/music.mp3'
-music.volume = 0.2
 
 window.requestAnimationFrame(gameLoop)
 
@@ -91,7 +81,6 @@ const moveUp = () => playerPos.y -= newPlayer.ms
 const moveDown = () => playerPos.y += newPlayer.ms
 
 document.addEventListener("keydown", (event)=>{
-	music.play()
 	if (event.key === 'a' && !keys.includes(event.key)) {
 		keys.push(event.key)
 		isPlayerLeft = true
@@ -218,10 +207,6 @@ function gameLoop() {
 			let yDiff = findDiff(playerPos.y, enemyY, closestEnemyDistance)
 
 			missles.push({x:playerPos.x, y:playerPos.y, xDiff: xDiff, yDiff: yDiff})
-			let fire = new Audio;
-			fire.src = 'sounds/missle.mp3'
-			fire.volume = 0.1
-			fire.play()
 		}
 
 	}
