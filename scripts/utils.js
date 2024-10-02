@@ -1,7 +1,7 @@
 function generateImage(src) {
 	const img = new Image();
 	img.src = src;
-	return img
+	return img;
 }
 
 function drawHealthBar(x, y, width, height, health, maxHealth) {
@@ -9,13 +9,13 @@ function drawHealthBar(x, y, width, height, health, maxHealth) {
 	const barHeight = height;
 	const fillWidth = (health / maxHealth) * barWidth;
 
-	ctx.fillStyle = "gray";
+	ctx.fillStyle = 'gray';
 	ctx.fillRect(x, y, barWidth, barHeight);
 
-	ctx.fillStyle = "red";
+	ctx.fillStyle = 'red';
 	ctx.fillRect(x, y, fillWidth, barHeight);
 
-	ctx.strokeStyle = "black";
+	ctx.strokeStyle = 'black';
 	ctx.strokeRect(x, y, barWidth, barHeight);
 }
 
@@ -27,17 +27,37 @@ function drawLevelBar() {
 
 	const fillWidth = (kills / killsForLevelUp) * barWidth;
 
-	ctx.fillStyle = "gray";
+	ctx.fillStyle = 'gray';
 	ctx.fillRect(barX, barY, barWidth, barHeight);
 
-	ctx.fillStyle = "green";
+	ctx.fillStyle = 'green';
 	ctx.fillRect(barX, barY, fillWidth, barHeight);
 
-	ctx.strokeStyle = "black";
+	ctx.strokeStyle = 'black';
 	ctx.strokeRect(barX, barY, barWidth, barHeight);
 
-	ctx.fillStyle = "white";
-	ctx.font = "15px Galmuri14";
-	ctx.textAlign = "center";
-	ctx.fillText(`레벨: ${newPlayer.level}`, barX + barWidth / 2, barY + barHeight - 5);
+	ctx.fillStyle = 'white';
+	ctx.font = '15px Galmuri14';
+	ctx.textAlign = 'center';
+	ctx.fillText(`레벨: ${ newPlayer.level }`, barX + barWidth / 2, barY + barHeight - 5);
 }
+
+document.addEventListener('keydown', (e) => {
+	if (e.key === 'Escape') {
+		isPlaying = !isPlaying;
+
+		const backdrop = document.getElementById('backdrop');
+		if (!isPlaying) {
+			backdrop.style.display = 'flex';
+		} else {
+			backdrop.style.display = 'none';
+			window.requestAnimationFrame(gameLoop);
+		}
+	}
+});
+
+document.getElementById('restartButton').addEventListener('click', () => {
+	isPlaying = true;
+	document.getElementById('backdrop').style.display = 'none';
+	window.requestAnimationFrame(gameLoop);
+});
