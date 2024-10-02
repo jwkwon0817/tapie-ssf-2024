@@ -41,23 +41,3 @@ function drawLevelBar() {
 	ctx.textAlign = 'center';
 	ctx.fillText(`레벨: ${ newPlayer.level }`, barX + barWidth / 2, barY + barHeight - 5);
 }
-
-document.addEventListener('keydown', (e) => {
-	if (e.key === 'Escape') {
-		isPlaying = !isPlaying;
-
-		const backdrop = document.getElementById('backdrop');
-		if (!isPlaying) {
-			backdrop.style.display = 'flex';
-		} else {
-			backdrop.style.display = 'none';
-			window.requestAnimationFrame(gameLoop);
-		}
-	}
-});
-
-document.getElementById('restartButton').addEventListener('click', () => {
-	isPlaying = true;
-	document.getElementById('backdrop').style.display = 'none';
-	window.requestAnimationFrame(gameLoop);
-});

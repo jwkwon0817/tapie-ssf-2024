@@ -78,38 +78,3 @@ h1 {
         font-size: 25px;
     }
 }
-
-#backdrop {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-#restartButton {
-    padding: 10px 20px;
-    font-size: 20px;
-    font-family: 'Galmuri9', cursive;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-
-    border-radius: 6px;
-
-    transition: background-color 0.2s;
-}
-
-#restartButton:hover {
-    background-color: green;
-}
-
-#restartButton:active {
-    background-color: blue;
-}
